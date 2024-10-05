@@ -55,8 +55,7 @@ label {
 input[type="checkbox"] {
     margin-right: 5px;
 }
-
-button {
+input[type="submit"]{
     padding: 15px 100px;
     background-color: #007BFF;
     color: white;
@@ -72,7 +71,7 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
