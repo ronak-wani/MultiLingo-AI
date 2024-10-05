@@ -33,10 +33,11 @@ async function backendResponse() {
             }
     }
     if (modelChoice === "api") {
+        console.log(JSON.stringify(obj.input))
         await fetch("http://localhost:8000/api", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(obj),
+            body: JSON.stringify(obj.input),
         }).then((response) => {
             console.log("Response Status Code" + response.status);
             console.log("Response Status Code" + response);
@@ -46,7 +47,7 @@ async function backendResponse() {
             return response.json();
         }).then((data) => {
             console.log('Success:', data);
-            answer = "<p class='botText'><span>" + data.output + "</span></p>";
+            answer = "<p class='botText'><span>" + data.text + "</span></p>";
             $('#js-response-window').append(answer);
         }).catch(error => {
             console.error('There was a problem with the fetch operation:', error);
